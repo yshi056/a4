@@ -11,13 +11,11 @@ export default function Signup() {
   const handleSignup = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Simple validation
     if (password !== verifyPassword) {
       setError("Passwords do not match");
       return;
     }
 
-    // Replace with your server's API endpoint
     const signupUrl = "/api/signup";
 
     try {
@@ -33,7 +31,6 @@ export default function Signup() {
         return;
       }
 
-      // If signup is successful, redirect to the profile page
       navigate("/Kanbas/Account/Profile");
     } catch (err) {
       setError("An unexpected error occurred. Please try again.");
